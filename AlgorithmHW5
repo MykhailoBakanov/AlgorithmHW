@@ -1,0 +1,20 @@
+import java.util.Arrays;
+
+public class ArrayUtil {
+    public static String[] increaseArray(String[] arr, int numElements) {
+        String[] newArr = Arrays.copyOf(arr, arr.length + numElements); // создаем новый массив с нужной длиной
+        for (int i = arr.length; i < newArr.length; i++) {
+            // пример ввода новых элементов пользователем
+            System.out.print("Введите новый элемент: ");
+            String newElement = System.console().readLine();
+            newArr[i] = newElement; // добавляем новый элемент в конец массива
+        }
+        return newArr;
+    }
+
+    public static void main(String[] args) {
+        String[] myArray = {"a", "b", "c", "d", "e"};
+        String[] newArray = increaseArray(myArray, 3);
+        System.out.println(Arrays.toString(newArray));
+    }
+}
